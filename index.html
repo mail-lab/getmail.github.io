@@ -1,4 +1,21 @@
+<!DOCTYPE html>
 
+<html lang="/ru_RU"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script>document.TS = new Date;</script>
+		<script>window.pgid = (Date.now() + Math.random()).toString(36);</script>
+		<script>
+			window.IS_OLD = typeof window.Promise === 'undefined';
+			window.IS_IE10 = false;
+			window.HAS_PERFORMANCE = ('performance' in window) && ('timing' in window.performance)
+				&& ('navigation' in window.performance) && (window.performance.timing.navigationStart > 0)
+				&& (typeof window.performance.now === 'function');
+			window.IS_TOUCH = 'ontouchstart' in window || navigator.maxTouchPoints;
+			window.IS_SAFARI = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
+				navigator.userAgent &&
+				navigator.userAgent.indexOf('CriOS') == -1 &&
+				navigator.userAgent.indexOf('FxiOS') == -1;
+			var HAS_CRED = 'credentials' in window.navigator;
+			var HAS_SILENT_ACCESS_API = false;
 			if (HAS_CRED) {
 				var c = window.navigator.credentials;
 				HAS_SILENT_ACCESS_API = typeof (c.preventSilentAccess || c.requireUserMediation) === 'function';
